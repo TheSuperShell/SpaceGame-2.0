@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Better Celestial Bodies/CelestialBody.gd" type="Script" id=1]
+[ext_resource path="res://Better Celestial Bodies/CollisionArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Better Celestial Bodies/body.png" type="Texture" id=3]
+
+[sub_resource type="Gradient" id=1]
+resource_local_to_scene = true
+offsets = PoolRealArray( 0.362694, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1 )
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+void fragment() {
+	vec4 prev_text = texture(TEXTURE, UV) * (1.0 - float(pow(UV.x - 0.5, 2) + pow(UV.y - 0.5, 2) <= pow(0.46, 2)));
+	prev_text = vec4(prev_text.r * 0.7, prev_text.g * 0.7, prev_text.b * 0.7, prev_text.a);
+	COLOR = prev_text;
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+
+[node name="CelestialBody" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Tail" type="Line2D" parent="."]
+light_mask = 0
+width = 2.0
+gradient = SubResource( 1 )
+
+[node name="CollisionArea" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="Type" type="Node2D" parent="."]
+
+[node name="Circle" type="Sprite" parent="."]
+visible = false
+light_mask = 0
+material = SubResource( 3 )
+scale = Vector2( 0.6, 0.6 )
+z_index = 10
+texture = ExtResource( 3 )
+
+[node name="ButtonNode" type="Node2D" parent="."]
+
+[node name="Button" type="TextureButton" parent="ButtonNode"]
+process_priority = 1
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 32.0
+focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+
+[connection signal="mouse_entered" from="ButtonNode/Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonNode/Button" to="." method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="ButtonNode/Button" to="." method="_on_Button_pressed"]

@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Scripts/Physics/Simulation.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Prehabs/Celestial Objects/Star.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Scripts/Physics/TrajectorySimulation.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Prehabs/Celestial Objects/Planet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Scripts/Physics/LightUpdater.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Textures/BG/space_bg_5.jpg" type="Texture" id=6]
+[ext_resource path="res://Assets/Scripts/MapUtils/Spawner.gd" type="Script" id=7]
+
+[node name="NewPhysicsTest" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 56.0
+margin_top = -120.0
+margin_right = 1556.0
+margin_bottom = 894.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trajectories" type="Node" parent="."]
+script = ExtResource( 3 )
+numSteps = 1751
+
+[node name="Simulation" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="LightUpdater" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="Spawner" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="Earth" parent="." instance=ExtResource( 4 )]
+position = Vector2( 320, 168 )
+mass = 10000.0
+initVelocity = Vector2( 0, -18.425 )
+radius = 20.0
+angularVelocity = 0.785398
+prevStage = ""
+
+[node name="Earth2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1096, 680 )
+mass = 800000.0
+initVelocity = Vector2( -0.088, 14.023 )
+radius = 30.404
+angularVelocity = 6.408
+prevStage = ""
+planetTexture = "Random"
+
+[node name="Star" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.913734, 0.892736, 0.711225, 1 )
+position = Vector2( 424, 592 )
+mass = 3e+09
+radius = 80.0
+angularVelocity = 0.785398
+luminocity = 3.06931
+
+[node name="Star2" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.829674, 0.803217, 0.428999, 1 )
+position = Vector2( 920, 216 )
+mass = 2e+09
+radius = 90.0
+angularVelocity = 0.785398
+luminocity = 2.07921
+
+[connection signal="addBody" from="Spawner" to="Simulation" method="_on_Spawner_addBody"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Prehabs/Celestial Objects/CelestialBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Scripts/Celestial Objects/Planet.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Textures/Celestial Objects/Planets/earth_PNG8.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Materials/LightingShader.gdshader" type="Shader" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 4 )
+shader_param/background_light_level = 1.0
+shader_param/amount = 0
+shader_param/planet_position = Vector2( 0, 0 )
+shader_param/angle = 0.0
+shader_param/stipness = 30.0
+
+[node name="Planet" groups=["SolidBody"] instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+nextStage = "Star"
+planetTexture = "Earth"
+
+[node name="CelestialBodySprite" parent="." index="1"]
+material = SubResource( 1 )
+scale = Vector2( 0.0111919, 0.0111919 )
+texture = ExtResource( 3 )
+
+[connection signal="area_entered" from="CelestialBodyHitbox" to="." method="_on_CelestialBodyHitbox_area_entered"]

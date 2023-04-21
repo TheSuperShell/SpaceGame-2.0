@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Camera/Camera.gd" type="Script" id=1]
+[ext_resource path="res://Camera/ParallaxBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Textures/BG/space_bg_6.jpg" type="Texture" id=3]
+
+[node name="Camera" type="Camera2D"]
+current = true
+script = ExtResource( 1 )
+MIN_ZOOM = 5.0
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+scroll_ignore_camera_zoom = true
+
+[node name="Sprite" parent="ParallaxBackground" index="0"]
+visible = false
+position = Vector2( -112, -120 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 3 )
+
+[node name="BlackBG" parent="ParallaxBackground" index="1"]
+visible = false
+color = Color( 0, 0, 0, 0.215686 )
+
+[node name="Back" parent="ParallaxBackground" index="2"]
+motion_mirroring = Vector2( 1280, 720 )
+
+[node name="Midle" parent="ParallaxBackground" index="3"]
+motion_mirroring = Vector2( 1280, 720 )
+
+[node name="Front" parent="ParallaxBackground" index="4"]
+motion_mirroring = Vector2( 1280, 720 )
+
+[node name="topleft" type="Position2D" parent="."]
+position = Vector2( -640, -360 )
+__meta__ = {
+"_gizmo_extents_": 136.1
+}
+
+[node name="bottomright" type="Position2D" parent="."]
+position = Vector2( 640, 360 )
+__meta__ = {
+"_gizmo_extents_": 110.8
+}
+
+[editable path="ParallaxBackground"]

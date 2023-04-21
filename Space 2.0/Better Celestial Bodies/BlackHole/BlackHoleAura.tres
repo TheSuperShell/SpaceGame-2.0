@@ -1,0 +1,15 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform sampler2D curve;
+uniform float force = 1.0;
+
+void fragment() {
+	vec2 to_center = vec2(0.5, 0.5) - UV;
+	float dist_to_center = length(to_center);
+	float curveVal = texture(curve, vec2(dist_to_center)).r;
+	vec2 diff = normalize(to_center) * 0.6 * curveVal * force;
+	COLOR = texture(SCREEN_TEXTURE, SCREEN_UV - diff);
+}"

@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Camera/BackGround.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/BG/space_back_ground.jpg" type="Texture" id=2]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="."]
+light_mask = 0
+scale = Vector2( 0.86, 0.86 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="BlackBG" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.623529 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.01, 0.01 )
+motion_mirroring = Vector2( 854, 480 )
+
+[node name="BackGround2" type="Node2D" parent="Back"]
+script = ExtResource( 1 )
+amount_of_stars = 80
+max_size = 1
+
+[node name="Midle" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.018, 0.018 )
+motion_mirroring = Vector2( 854, 480 )
+
+[node name="BackGround2" type="Node2D" parent="Midle"]
+script = ExtResource( 1 )
+
+[node name="Front" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.03, 0.03 )
+motion_mirroring = Vector2( 854, 480 )
+
+[node name="BackGround" type="Node2D" parent="Front"]
+script = ExtResource( 1 )
+amount_of_stars = 20
+max_size = 3

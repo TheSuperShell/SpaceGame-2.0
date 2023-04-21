@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GUI/nasa_font_12.tres" type="DynamicFont" id=1]
+
+[node name="Parameter" type="HBoxContainer"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 4.0
+margin_right = 82.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 1 )
+text = "Parameter = "
+
+[node name="SpinBox" type="SpinBox" parent="."]
+margin_left = 86.0
+margin_right = 236.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 150, 0 )
+min_value = 1.0
+max_value = 1e+11
+value = 1.0

@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Better Celestial Bodies/CelestialBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Better Celestial Bodies/GasGiant/GasGiantType.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Materials/LightingShader.gdshader" type="Shader" id=4]
+[ext_resource path="res://Better Celestial Bodies/GasGiant/GasGiants/Jupiter.png" type="Texture" id=5]
+
+[sub_resource type="Gradient" id=1]
+resource_local_to_scene = true
+offsets = PoolRealArray( 0.362694, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1 )
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 4 )
+shader_param/background_light_level = 0.05
+shader_param/amount = 0
+shader_param/planet_position = Vector2( 0, 0 )
+shader_param/angle = null
+shader_param/stipness = 25.0
+
+[node name="GasGiant" instance=ExtResource( 1 )]
+
+[node name="Tail" parent="." index="0"]
+gradient = SubResource( 1 )
+
+[node name="CollisionArea" parent="." index="1"]
+collision_layer = 16
+collision_mask = 17
+
+[node name="Type" parent="." index="2"]
+script = ExtResource( 2 )
+
+[node name="Body" type="Sprite" parent="Type" index="0"]
+light_mask = 0
+material = SubResource( 2 )
+position = Vector2( -1.2207e-05, 0 )
+scale = Vector2( 0.1, 0.1 )
+z_index = 1
+texture = ExtResource( 5 )
+
+[connection signal="area_entered" from="CollisionArea" to="." method="_on_CollisionArea_area_entered"]
+[connection signal="change_mass" from="Type" to="." method="_change_mass"]
+[connection signal="change_radius" from="Type" to="." method="_change_radius"]
+[connection signal="change_type" from="Type" to="." method="_change_type"]
+[connection signal="change_velocity" from="Type" to="." method="_change_velocity"]
