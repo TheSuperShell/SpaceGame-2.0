@@ -1,9 +1,9 @@
-tool
+@tool
 extends Node
 
-export(float) var timeStep = 0.1
-export(int) var numSteps = 1000
-export(NodePath) var reference
+@export var timeStep: float = 0.1
+@export var numSteps: int = 1000
+@export var reference: NodePath
 
 var bodies: Array
 
@@ -19,7 +19,7 @@ class SimulatedBody:
 		mass = body.mass
 
 func _process(_delta: float) -> void:
-	if Engine.editor_hint:
+	if Engine.is_editor_hint():
 		bodies = get_tree().get_nodes_in_group("PhysicalBody")
 		var lines = []
 		var simulatedBodies = []

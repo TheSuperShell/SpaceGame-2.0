@@ -1,3 +1,3 @@
 extends Button
 
-export(String) var command
+@export var command: String

@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Camera/BackGround.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/BG/space_back_ground.jpg" type="Texture" id=2]
+[ext_resource path="res://Camera3D/BackGround.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/BG/space_back_ground.jpg" type="Texture2D" id=2]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 0
 scale = Vector2( 0.86, 0.86 )
 texture = ExtResource( 2 )

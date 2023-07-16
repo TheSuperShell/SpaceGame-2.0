@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Scripts/Physics/CelestialBody.gd" type="Script" id=1]
-[ext_resource path="res://Better Celestial Bodies/body.png" type="Texture" id=2]
+[ext_resource path="res://Better Celestial Bodies/body.png" type="Texture2D" id=2]
 [ext_resource path="res://Assets/Scripts/Physics/CelestialBodyHitbox.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -15,7 +15,7 @@ color = Color( 1, 1, 1, 1 )
 width = 5.0
 default_color = Color( 1, 1, 1, 1 )
 
-[node name="CelestialBodySprite" type="Sprite" parent="."]
+[node name="CelestialBodySprite" type="Sprite2D" parent="."]
 scale = Vector2( 0.3125, 0.3125 )
 texture = ExtResource( 2 )
 

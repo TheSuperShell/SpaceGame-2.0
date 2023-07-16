@@ -1,13 +1,13 @@
-tool
+@tool
 class_name CelestialBody
 extends PhysicalBody
 
-export var radius: float = 10.0 setget setRadius
-export var angularVelocity: float = 0.0
-export(String, "Planet", "Star", "None") var nextStage = "None" 
-export(String, "Planet", "Star", "None") var prevStage = "None"
+@export var radius: float = 10.0: set = setRadius
+@export var angularVelocity: float = 0.0
+@export var nextStage = "None"  # (String, "Planet", "Star", "None")
+@export var prevStage = "None" # (String, "Planet", "Star", "None")
 
-var color: Color = Color.white
+var color: Color = Color.WHITE
 var angle: float = 0.0
 var minMass: float
 var maxMass: float
@@ -41,7 +41,7 @@ func setTrajectory(trajectory: Array):
 
 func setRadius(value: float) -> void:
 	radius = value
-	if Engine.editor_hint:
+	if Engine.is_editor_hint():
 		setScale()
 
 func setAngularVelocity(value: float) -> void:

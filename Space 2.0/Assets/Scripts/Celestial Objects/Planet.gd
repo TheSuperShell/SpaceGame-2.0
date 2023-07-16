@@ -1,7 +1,7 @@
-tool
+@tool
 extends CelestialBody
 
-export(String, "Earth", "Mars", "Venus", "Mercury", "Random") var planetTexture = "Random" setget setPlanetTexture
+@export var planetTexture = "Random": set = setPlanetTexture
 
 var planet_sprites = {"Earth": load("res://Assets/Textures/Celestial Objects/Planets/earth_PNG8.png"),
 					  "Mars": load("res://Assets/Textures/Celestial Objects/Planets/pngwing.com.png"),
@@ -10,21 +10,21 @@ var planet_sprites = {"Earth": load("res://Assets/Textures/Celestial Objects/Pla
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	._ready()
-	color = Color.white
+	super._ready()
+	color = Color.WHITE
 	minMass = 0.0
 	maxMass = Constants.planetMassLimit
-	if !Engine.editor_hint:
-		$CelestialBodySprite.material.set_shader_param("background_light_level", 0.05)
+	if !Engine.is_editor_hint():
+		$CelestialBodySprite.material.set_shader_parameter("background_light_level", 0.05)
 
 func UpdateRotation(delta: float):
-	.UpdateRotation(delta)
-	$CelestialBodySprite.material.set_shader_param("planet_position", position)
-	$CelestialBodySprite.material.set_shader_param("angle", angle)
+	super.UpdateRotation(delta)
+	$CelestialBodySprite.material.set_shader_parameter("planet_position", position)
+	$CelestialBodySprite.material.set_shader_parameter("angle", angle)
 
-func UpdateLighting(lightTexture: Texture, number: int):
-	$CelestialBodySprite.material.set_shader_param("light_sources", lightTexture)
-	$CelestialBodySprite.material.set_shader_param("amount", number)
+func UpdateLighting(lightTexture: Texture2D, number: int):
+	$CelestialBodySprite.material.set_shader_parameter("light_sources", lightTexture)
+	$CelestialBodySprite.material.set_shader_parameter("amount", number)
 
 func setPlanetTexture(texture: String):
 	planetTexture = texture

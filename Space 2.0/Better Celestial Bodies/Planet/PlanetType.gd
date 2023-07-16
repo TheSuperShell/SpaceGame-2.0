@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var sprite = $Body
+@onready var sprite = $Body
 
 var mass = 1.0
 var radius = 1.0
@@ -34,10 +34,10 @@ func random_texture():
 	sprite.texture = planet_sprites[new_texture[0]]
 
 func update_shader(texture, number):
-	sprite.material.set_shader_param("amount", number)
-	sprite.material.set_shader_param("light_sources", texture)
-	sprite.material.set_shader_param("planet_position", global_position)
-	sprite.material.set_shader_param("angle", angle)
+	sprite.material.set_shader_parameter("amount", number)
+	sprite.material.set_shader_parameter("light_sources", texture)
+	sprite.material.set_shader_parameter("planet_position", global_position)
+	sprite.material.set_shader_parameter("angle", angle)
 
 func update_type(v, d):
 	velocity = v
@@ -57,7 +57,7 @@ func eat(other_mass, other_radius, other_velocity, other_angular):
 
 func check_mass():
 	if mass >= Usefull.gas_mass_limit:
-		var new_type = load("res://Better Celestial Bodies/GasGiant/GasGiant.tscn").instance()
+		var new_type = load("res://Better Celestial Bodies/GasGiant/GasGiant.tscn").instantiate()
 		new_type.mass = mass
 		new_type.radius = radius
 		new_type.velocity = velocity

@@ -7,9 +7,9 @@ var color
 var luminocity
 var attached_objects = []
 
-onready var light = $Light
-onready var light_sprite = $LightSprite
-onready var suck_area = $SuckArea
+@onready var light = $Light3D
+@onready var light_sprite = $LightSprite
+@onready var suck_area = $SuckArea
 
 const gradient = preload("res://Better Celestial Bodies/Star/StarColorGradient.tres")
 const influence_distance = 2.0
@@ -52,7 +52,7 @@ func update_obj(new_mass, other_velocity, update_speed=true):
 	changed()
 
 func changed():
-	color = gradient.interpolate(Usefull.liniar(Usefull.star_mass_limit, 0.0, Usefull.bh_star_limit, 1.0, mass))
+	color = gradient.sample(Usefull.liniar(Usefull.star_mass_limit, 0.0, Usefull.bh_star_limit, 1.0, mass))
 	light.texture_scale = 0.6 * radius / 64
 	light.color = color
 	light_sprite.scale = Vector2(0.6 * radius / 64, 0.6 * radius / 64)
@@ -62,16 +62,16 @@ func changed():
 	
 func check_mass():
 	if mass < Usefull.star_mass_limit:
-		var new_type = load("res://Better Celestial Bodies/GasGiant/GasGiant.tscn").instance()
+		var new_type = load("res://Better Celestial Bodies/GasGiant/GasGiant.tscn").instantiate()
 		new_type.mass = mass
 		new_type.radius = 0.8 * radius
 		new_type.velocity = velocity
 		new_type.global_position = global_position
-		new_type.angular_velocity = rand_range(-300, 300) / 100
+		new_type.angular_velocity = randf_range(-300, 300) / 100
 		new_type.planet = "Random"
 		emit_signal("change_type", new_type)
 	if mass >= Usefull.bh_star_limit:
-		var new_type = load("res://Better Celestial Bodies/BlackHole/BlackHole.tscn").instance()
+		var new_type = load("res://Better Celestial Bodies/BlackHole/BlackHole.tscn").instantiate()
 		new_type.mass = mass
 		new_type.velocity = velocity
 		new_type.global_position = global_position

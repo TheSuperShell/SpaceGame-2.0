@@ -1,10 +1,10 @@
 extends Control
 
-onready var buttons = $MenuColor/Menu/Buttons
+@onready var buttons = $MenuColor/Menu/Buttons
 
 func _ready():
 	for button in buttons.get_children():
-		button.connect("pressed", self, "_on_Button_pressed", [button.command])
+		button.connect("pressed", Callable(self, "_on_Button_pressed").bind(button.command))
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):

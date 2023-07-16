@@ -2,10 +2,10 @@
 
 [ext_resource path="res://GUI/Unterface/Interface.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Unterface/TimeWarpButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://GUI/nasa_font_12.tres" type="DynamicFont" id=3]
+[ext_resource path="res://GUI/nasa_font_12.tres" type="FontFile" id=3]
 [ext_resource path="res://GUI/Unterface/FunctionBuddons/CreatePlanet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GUI/Unterface/FunctionBuddons/DeletePlanet.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Better Celestial Bodies/body.png" type="Texture" id=6]
+[ext_resource path="res://Better Celestial Bodies/body.png" type="Texture2D" id=6]
 [ext_resource path="res://GUI/Unterface/RightBar/Radius.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GUI/Unterface/RightBar/Mass.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GUI/Unterface/RightBar/AngularVelocity.tscn" type="PackedScene" id=9]
@@ -25,26 +25,26 @@ shader = SubResource( 4 )
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:margin_bottom")
+tracks/0/path = NodePath(".:offset_bottom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ -60.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:margin_top")
+tracks/1/path = NodePath(".:offset_top")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ -120.0 ]
 }
@@ -55,8 +55,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ 0.835 ]
 }
@@ -67,8 +67,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ 0.835 ]
 }
@@ -79,8 +79,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ 0.7 ]
 }
@@ -91,8 +91,8 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ 0.7 ]
 }
@@ -107,8 +107,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.4 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ 0.75, 1.0 ]
 }
@@ -119,8 +119,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.4 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ 0.75, 1.0 ]
 }
@@ -135,8 +135,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.4 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ 1.0, 0.75 ]
 }
@@ -147,8 +147,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.4 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ 1.0, 0.75 ]
 }
@@ -163,8 +163,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ 0.835, 1.0 ]
 }
@@ -175,8 +175,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ 0.835, 1.0 ]
 }
@@ -191,8 +191,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ 1.0, 0.835 ]
 }
@@ -203,8 +203,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
 "update": 0,
 "values": [ 1.0, 0.835 ]
 }
@@ -215,7 +215,7 @@ script = ExtResource( 1 )
 
 [node name="PlanetShadowNode" type="Node2D" parent="."]
 
-[node name="PlanetShadow" type="Sprite" parent="PlanetShadowNode"]
+[node name="PlanetShadow" type="Sprite2D" parent="PlanetShadowNode"]
 visible = false
 material = SubResource( 5 )
 texture = ExtResource( 6 )
@@ -233,7 +233,7 @@ anims/SlideBarUp = SubResource( 3 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = 60.0
+offset_bottom = 60.0
 color = Color( 0.0784314, 0.0745098, 0.113725, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -243,67 +243,67 @@ __meta__ = {
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -20.0
-margin_bottom = 20.0
+offset_top = -20.0
+offset_bottom = 20.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Parameters" type="HBoxContainer" parent="SlideLowerBar/SlideBarElements"]
-margin_right = 800.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 800, 0 )
+offset_right = 800.0
+offset_bottom = 40.0
+custom_minimum_size = Vector2( 800, 0 )
 alignment = 1
 
 [node name="Mass_label" type="Label" parent="SlideLowerBar/SlideBarElements/Parameters"]
-margin_left = 122.0
-margin_top = 12.0
-margin_right = 170.0
-margin_bottom = 28.0
-custom_fonts/font = ExtResource( 3 )
+offset_left = 122.0
+offset_top = 12.0
+offset_right = 170.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource( 3 )
 text = "Mass = "
 
 [node name="Mass" type="SpinBox" parent="SlideLowerBar/SlideBarElements/Parameters"]
-margin_left = 174.0
-margin_right = 324.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 150, 0 )
-hint_tooltip = "Sets the mass of created body"
+offset_left = 174.0
+offset_right = 324.0
+offset_bottom = 40.0
+custom_minimum_size = Vector2( 150, 0 )
+tooltip_text = "Sets the mass of created body"
 min_value = 1.0
 max_value = 1e+11
 value = 100.0
 suffix = "kg"
 
 [node name="Radius_label" type="Label" parent="SlideLowerBar/SlideBarElements/Parameters"]
-margin_left = 328.0
-margin_top = 12.0
-margin_right = 384.0
-margin_bottom = 28.0
-custom_fonts/font = ExtResource( 3 )
+offset_left = 328.0
+offset_top = 12.0
+offset_right = 384.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource( 3 )
 text = "Radius = "
 
 [node name="Radius" type="SpinBox" parent="SlideLowerBar/SlideBarElements/Parameters"]
-margin_left = 388.0
-margin_right = 538.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 150, 0 )
+offset_left = 388.0
+offset_right = 538.0
+offset_bottom = 40.0
+custom_minimum_size = Vector2( 150, 0 )
 min_value = 1.0
 max_value = 500.0
 value = 10.0
 suffix = "m"
 
 [node name="CheckButton" type="CheckButton" parent="SlideLowerBar/SlideBarElements/Parameters"]
-margin_left = 542.0
-margin_right = 678.0
-margin_bottom = 40.0
+offset_left = 542.0
+offset_right = 678.0
+offset_bottom = 40.0
 focus_mode = 0
-custom_fonts/font = ExtResource( 3 )
+theme_override_fonts/font = ExtResource( 3 )
 text = "Random:"
 
 [node name="Options" type="HBoxContainer" parent="SlideLowerBar/SlideBarElements"]
-margin_left = 804.0
-margin_right = 1280.0
-margin_bottom = 40.0
+offset_left = 804.0
+offset_right = 1280.0
+offset_bottom = 40.0
 size_flags_horizontal = 3
 alignment = 1
 
@@ -311,7 +311,7 @@ alignment = 1
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -60.0
+offset_top = -60.0
 color = Color( 0.113725, 0.109804, 0.164706, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -321,48 +321,48 @@ __meta__ = {
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -20.0
-margin_bottom = 20.0
+offset_top = -20.0
+offset_bottom = 20.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TimeWarp" type="HBoxContainer" parent="LowerBar/LowerBarElements"]
-margin_right = 400.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 400, 0 )
-custom_constants/separation = 5
+offset_right = 400.0
+offset_bottom = 40.0
+custom_minimum_size = Vector2( 400, 0 )
+theme_override_constants/separation = 5
 alignment = 1
 
 [node name="TimeWarpButton2" parent="LowerBar/LowerBarElements/TimeWarp" instance=ExtResource( 2 )]
-margin_left = 32.0
-margin_right = 72.0
-margin_bottom = 40.0
+offset_left = 32.0
+offset_right = 72.0
+offset_bottom = 40.0
 time_warp = "down"
 
 [node name="TimeWarpButton" parent="LowerBar/LowerBarElements/TimeWarp" instance=ExtResource( 2 )]
-margin_left = 77.0
-margin_right = 117.0
-margin_bottom = 40.0
+offset_left = 77.0
+offset_right = 117.0
+offset_bottom = 40.0
 
 [node name="TimeWarpButton3" parent="LowerBar/LowerBarElements/TimeWarp" instance=ExtResource( 2 )]
-margin_left = 122.0
-margin_right = 162.0
-margin_bottom = 40.0
+offset_left = 122.0
+offset_right = 162.0
+offset_bottom = 40.0
 time_warp = "up"
 
 [node name="TimeIndicator" type="ColorRect" parent="LowerBar/LowerBarElements/TimeWarp"]
-margin_left = 167.0
-margin_right = 367.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 200, 0 )
+offset_left = 167.0
+offset_right = 367.0
+offset_bottom = 40.0
+custom_minimum_size = Vector2( 200, 0 )
 size_flags_horizontal = 0
 color = Color( 0.231373, 0.192157, 0.415686, 1 )
 
 [node name="Label" type="Label" parent="LowerBar/LowerBarElements/TimeWarp/TimeIndicator"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = ExtResource( 3 )
+theme_override_fonts/font = ExtResource( 3 )
 text = "1 s / second"
 align = 1
 valign = 1
@@ -371,29 +371,29 @@ __meta__ = {
 }
 
 [node name="OtherButtons" type="HBoxContainer" parent="LowerBar/LowerBarElements"]
-margin_left = 404.0
-margin_right = 1280.0
-margin_bottom = 40.0
+offset_left = 404.0
+offset_right = 1280.0
+offset_bottom = 40.0
 size_flags_horizontal = 3
-custom_constants/separation = 5
+theme_override_constants/separation = 5
 alignment = 1
 
 [node name="CreatePlanet" parent="LowerBar/LowerBarElements/OtherButtons" instance=ExtResource( 4 )]
-margin_left = 395.0
-margin_right = 435.0
-margin_bottom = 40.0
+offset_left = 395.0
+offset_right = 435.0
+offset_bottom = 40.0
 
 [node name="DeletePlanet" parent="LowerBar/LowerBarElements/OtherButtons" instance=ExtResource( 5 )]
-margin_left = 440.0
-margin_right = 480.0
-margin_bottom = 40.0
+offset_left = 440.0
+offset_right = 480.0
+offset_bottom = 40.0
 
 [node name="RightPanel" type="ColorRect" parent="."]
 anchor_left = 1.0
 anchor_top = 0.15
 anchor_right = 1.0
 anchor_bottom = 0.8
-margin_right = 300.0
+offset_right = 300.0
 color = Color( 0.113725, 0.109804, 0.164706, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -402,63 +402,63 @@ __meta__ = {
 [node name="RightBarElements" type="VBoxContainer" parent="RightPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 30.0
-margin_right = -30.0
-custom_constants/separation = 10
+offset_left = 30.0
+offset_right = -30.0
+theme_override_constants/separation = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="UpButtons" type="HBoxContainer" parent="RightPanel/RightBarElements"]
-margin_right = 240.0
-margin_bottom = 30.0
+offset_right = 240.0
+offset_bottom = 30.0
 alignment = 2
 
 [node name="Exit" type="Button" parent="RightPanel/RightBarElements/UpButtons"]
-margin_left = 210.0
-margin_right = 240.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 30, 30 )
+offset_left = 210.0
+offset_right = 240.0
+offset_bottom = 30.0
+custom_minimum_size = Vector2( 30, 30 )
 focus_mode = 0
 text = "X"
 
 [node name="ColorRect" type="ColorRect" parent="RightPanel/RightBarElements"]
-margin_top = 40.0
-margin_right = 240.0
-margin_bottom = 190.0
-rect_min_size = Vector2( 0, 150 )
+offset_top = 40.0
+offset_right = 240.0
+offset_bottom = 190.0
+custom_minimum_size = Vector2( 0, 150 )
 color = Color( 0, 0, 0, 1 )
 
 [node name="Mass" parent="RightPanel/RightBarElements" instance=ExtResource( 8 )]
-margin_top = 200.0
-margin_right = 240.0
-margin_bottom = 224.0
+offset_top = 200.0
+offset_right = 240.0
+offset_bottom = 224.0
 alignment = 2
 
 [node name="Label" parent="RightPanel/RightBarElements/Mass" index="0"]
-margin_left = 38.0
-margin_right = 86.0
+offset_left = 38.0
+offset_right = 86.0
 
 [node name="SpinBox" parent="RightPanel/RightBarElements/Mass" index="1"]
-margin_left = 90.0
-margin_right = 240.0
+offset_left = 90.0
+offset_right = 240.0
 
 [node name="Radius" parent="RightPanel/RightBarElements" instance=ExtResource( 7 )]
-margin_top = 234.0
-margin_right = 240.0
-margin_bottom = 258.0
+offset_top = 234.0
+offset_right = 240.0
+offset_bottom = 258.0
 alignment = 2
 
 [node name="AngularVelocity" parent="RightPanel/RightBarElements" instance=ExtResource( 9 )]
-margin_top = 268.0
-margin_right = 240.0
-margin_bottom = 292.0
+offset_top = 268.0
+offset_right = 240.0
+offset_bottom = 292.0
 alignment = 2
 
 [node name="Velocity" parent="RightPanel/RightBarElements" instance=ExtResource( 10 )]
-margin_top = 302.0
-margin_right = 240.0
-margin_bottom = 326.0
+offset_top = 302.0
+offset_right = 240.0
+offset_bottom = 326.0
 alignment = 2
 
 [connection signal="value_changed" from="SlideLowerBar/SlideBarElements/Parameters/Mass" to="." method="_on_Mass_value_changed"]

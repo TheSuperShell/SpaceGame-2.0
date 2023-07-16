@@ -15,10 +15,10 @@ var random = false
 var planet_stats = null
 var rightBarUp = false
 
-onready var timeIndicator = $LowerBar/LowerBarElements/TimeWarp/TimeIndicator/Label
-onready var functionalButtons = $LowerBar/LowerBarElements/OtherButtons
-onready var slideBar = $SlideLowerBar
-onready var animation = $AnimationPlayer
+@onready var timeIndicator = $LowerBar/LowerBarElements/TimeWarp/TimeIndicator/Label
+@onready var functionalButtons = $LowerBar/LowerBarElements/OtherButtons
+@onready var slideBar = $SlideLowerBar
+@onready var animation = $AnimationPlayer
 
 signal planet_parameters_changed(mass, radius, random)
 
@@ -33,9 +33,9 @@ func _ready():
 	$PlanetShadowNode/PlanetShadow.visible = false
 	for button in $LowerBar/LowerBarElements/TimeWarp.get_children():
 		if button is Button:
-			button.connect("pressed", self, "_on_Button_pressed", [button])
+			button.connect("pressed", Callable(self, "_on_Button_pressed").bind(button))
 	for button in functionalButtons.get_children():
-		button.connect("pressed", self, "_on_Button_toggled", [button])
+		button.connect("pressed", Callable(self, "_on_Button_toggled").bind(button))
 		
 func _process(_delta):
 	if planet_stats:
@@ -79,7 +79,7 @@ func write_time_warp(time):
 func _on_Button_toggled(button):
 	for but in functionalButtons.get_children():
 		if but != button:
-			but.pressed = false
+			but.button_pressed = false
 	if button.action == "create":
 		mode = CREATE
 		animation.play("SlideBarUp")

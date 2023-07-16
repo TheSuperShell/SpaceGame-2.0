@@ -1,19 +1,19 @@
 extends Node2D
 
-export(float) var radius = 10 setget set_radius
-export(float) var mass = 100 setget set_mass
-export var velocity = Vector2.ZERO
-export(bool) var has_tail = true
-export(float) var angular_velocity = 0.0
-export(String, "Earth", "Mars", "Venus", "Mercury", "Jupiter", "Neptune", "Uranus", "Saturn", "Random") var planet = "Earth"
+@export var radius: float = 10: set = set_radius
+@export var mass: float = 100: set = set_mass
+@export var velocity = Vector2.ZERO
+@export var has_tail: bool = true
+@export var angular_velocity: float = 0.0
+@export var planet = "Earth" # (String, "Earth", "Mars", "Venus", "Mercury", "Jupiter", "Neptune", "Uranus", "Saturn", "Random")
 var planet_stats_is_seen = false
 
-onready var collision = $CollisionArea
-onready var tail = $Tail
-onready var type = $Type
-onready var button = $ButtonNode
-onready var circle = $Circle
-onready var camera_control = $RemoteTransform2D
+@onready var collision = $CollisionArea
+@onready var tail = $Tail
+@onready var type = $Type
+@onready var button = $ButtonNode
+@onready var circle = $Circle
+@onready var camera_control = $RemoteTransform2D
 
 signal planet_pressed(planet)
 
@@ -63,7 +63,7 @@ func destroy():
 func new_state():
 	if new_object_state:
 		get_parent().add_child(new_object_state)
-		new_object_state.connect("planet_pressed", get_parent(), "_on_planet_pressed")
+		new_object_state.connect("planet_pressed", Callable(get_parent(), "_on_planet_pressed"))
 		queue_free()
 		new_object_state = null
 		

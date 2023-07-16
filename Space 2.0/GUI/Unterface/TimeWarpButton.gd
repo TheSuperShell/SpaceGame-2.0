@@ -1,8 +1,8 @@
 extends Button
 
-export(String, "pause", "up", "down") var time_warp = "pause"
+@export var time_warp = "pause" # (String, "pause", "up", "down")
 
-onready var label = $Label
+@onready var label = $Label
 
 func _ready():
 	if time_warp == "pause":

@@ -1,8 +1,8 @@
 extends Node2D
 
-onready var sprite = $Body
-onready var aura = $Aura
-onready var suck_area = $SuckArea
+@onready var sprite = $Body
+@onready var aura = $Aura
+@onready var suck_area = $SuckArea
 
 var mass = 1.0
 var radius = 1.0

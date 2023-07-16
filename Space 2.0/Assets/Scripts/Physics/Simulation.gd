@@ -6,7 +6,7 @@ var PhysicalBodies: Array
 func _ready():
 	PhysicalBodies = get_tree().get_nodes_in_group("PhysicalBody")
 	for body in PhysicalBodies:
-		body.connect("died", self, "deletObject")
+		body.connect("died", Callable(self, "deletObject"))
 
 func _physics_process(delta: float) -> void:
 	for body in PhysicalBodies:
@@ -32,8 +32,8 @@ func CalculateAcceleration(body: CelestialBody, ignore: CelestialBody = null) ->
 
 func deletObject(obj):
 	PhysicalBodies.erase(obj)
-	obj.disconnect("died", self, "deletObject")
+	obj.disconnect("died", Callable(self, "deletObject"))
 
 func _on_Spawner_addBody(body):
 	PhysicalBodies.append(body)
-	body.connect("died", self, "deletObject")
+	body.connect("died", Callable(self, "deletObject"))

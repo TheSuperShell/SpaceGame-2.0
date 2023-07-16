@@ -7,7 +7,7 @@ var angular_velocity = 0.0
 var angle = 0.0
 var color
 
-onready var body = $Body
+@onready var body = $Body
 
 signal change_mass(value)
 signal change_radius(value)
@@ -41,10 +41,10 @@ func update_type(v, delta):
 	angle += angular_velocity * delta
 
 func update_shader(textur, number):
-	body.material.set_shader_param("amount", number)
-	body.material.set_shader_param("light_sources", textur)
-	body.material.set_shader_param("planet_position", global_position)
-	body.material.set_shader_param("angle", angle)
+	body.material.set_shader_parameter("amount", number)
+	body.material.set_shader_parameter("light_sources", textur)
+	body.material.set_shader_parameter("planet_position", global_position)
+	body.material.set_shader_parameter("angle", angle)
 
 func eat(other_mass, other_radius, other_velocity, other_angular):
 	var future_radius = radius * pow((mass + other_mass) / mass, 1/3)
@@ -69,7 +69,7 @@ func changed():
 	
 func check_mass():
 	if mass < Usefull.gas_mass_limit:
-		var new_type = load("res://Better Celestial Bodies/Planet/Planet.tscn").instance()
+		var new_type = load("res://Better Celestial Bodies/Planet/Planet.tscn").instantiate()
 		new_type.mass = mass
 		new_type.radius = 0.8 * radius
 		new_type.velocity = velocity
@@ -77,7 +77,7 @@ func check_mass():
 		new_type.angular_velocity = angular_velocity
 		emit_signal("change_type", new_type)
 	if mass >= Usefull.star_mass_limit:
-		var new_type = load("res://Better Celestial Bodies/Star/Star.tscn").instance()
+		var new_type = load("res://Better Celestial Bodies/Star/Star.tscn").instantiate()
 		new_type.mass = mass
 		new_type.velocity = velocity
 		new_type.global_position = global_position

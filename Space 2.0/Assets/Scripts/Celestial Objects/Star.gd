@@ -1,29 +1,29 @@
-tool
+@tool
 extends CelestialBody
 
-export(float) var luminocity = 5.0
+@export var luminocity: float = 5.0
 var objectsInSuckArea: Array
 const gradient = preload("res://Assets/Materials/StarColorGradient.tres")
 
 func _ready():
-	._ready()
+	super._ready()
 	minMass = Constants.planetMassLimit
 	maxMass = INF
 	
 func setScale():
-	.setScale()
+	super.setScale()
 	$LightSprite.scale = Vector2.ONE * radius / 50.0
-	$Light2D.scale = Vector2.ONE * radius / 50.0
+	$PointLight2D.scale = Vector2.ONE * radius / 50.0
 	$SuckArea.scale = Vector2.ONE * radius * 3
 
 func setMass(value: float):
-	.setMass(value)
+	super.setMass(value)
 	luminocity = liniar(Constants.planetMassLimit, 0.1, Constants.starMassLimit, 10.0, mass)
-	color = gradient.interpolate(liniar(Constants.planetMassLimit, 0.0, Constants.starMassLimit, 1.0, mass))
+	color = gradient.sample(liniar(Constants.planetMassLimit, 0.0, Constants.starMassLimit, 1.0, mass))
 	modulate = color
 
 func _physics_process(delta):
-	if !Engine.editor_hint:
+	if !Engine.is_editor_hint():
 		for body in objectsInSuckArea:
 			var dist = position.distance_to(body.position)
 			var suck_amount = -atan(0.1*(dist - radius * 3.0))/PI + 0.5

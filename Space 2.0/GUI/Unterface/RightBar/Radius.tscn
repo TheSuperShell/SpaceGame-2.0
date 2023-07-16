@@ -5,10 +5,10 @@
 [node name="Radius" instance=ExtResource( 1 )]
 
 [node name="Label" parent="." index="0"]
-margin_right = 56.0
+offset_right = 56.0
 text = "Radius = "
 
 [node name="SpinBox" parent="." index="1"]
-margin_left = 60.0
-margin_right = 210.0
+offset_left = 60.0
+offset_right = 210.0
 suffix = "m"

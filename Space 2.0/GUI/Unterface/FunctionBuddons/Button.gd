@@ -1,3 +1,3 @@
 extends Button
 
-export(String, "create", "delete") var action = "create"
+@export var action = "create" # (String, "create", "delete")

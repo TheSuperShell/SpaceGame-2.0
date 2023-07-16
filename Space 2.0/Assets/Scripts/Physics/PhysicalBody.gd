@@ -1,8 +1,8 @@
 class_name PhysicalBody
 extends Node2D
 
-export var mass: float = 1.0 setget setMass
-export var initVelocity: Vector2 = Vector2.ZERO setget setInitVelocity
+@export var mass: float = 1.0: set = setMass
+@export var initVelocity: Vector2 = Vector2.ZERO: set = setInitVelocity
 
 var velocity: Vector2
 

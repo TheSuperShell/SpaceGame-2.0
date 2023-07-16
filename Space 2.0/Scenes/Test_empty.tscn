@@ -20,5 +20,5 @@ position = Vector2( 160, -264 )
 radius = 100.0
 mass = 5e+07
 
-[editable path="Camera"]
-[editable path="Camera/ParallaxBackground"]
+[editable path="Camera3D"]
+[editable path="Camera3D/ParallaxBackground"]

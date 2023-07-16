@@ -7,7 +7,7 @@
 
 [node name="BasicSystem" instance=ExtResource( 3 )]
 
-[node name="Camera" parent="." index="0"]
+[node name="Camera3D" parent="." index="0"]
 process_priority = 1
 
 [node name="Star" parent="ObjectList" index="0" instance=ExtResource( 2 )]
@@ -79,5 +79,5 @@ planet = "Neptune"
 [node name="Pause" parent="." index="4"]
 process_priority = 2
 
-[editable path="Camera"]
-[editable path="Camera/ParallaxBackground"]
+[editable path="Camera3D"]
+[editable path="Camera3D/ParallaxBackground"]

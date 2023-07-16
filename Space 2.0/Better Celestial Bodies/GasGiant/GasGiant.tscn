@@ -3,12 +3,12 @@
 [ext_resource path="res://Better Celestial Bodies/CelestialBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Better Celestial Bodies/GasGiant/GasGiantType.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Materials/LightingShader.gdshader" type="Shader" id=4]
-[ext_resource path="res://Better Celestial Bodies/GasGiant/GasGiants/Jupiter.png" type="Texture" id=5]
+[ext_resource path="res://Better Celestial Bodies/GasGiant/GasGiants/Jupiter.png" type="Texture2D" id=5]
 
 [sub_resource type="Gradient" id=1]
 resource_local_to_scene = true
-offsets = PoolRealArray( 0.362694, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1 )
+offsets = PackedFloat32Array( 0.362694, 1 )
+colors = PackedColorArray( 1, 1, 1, 0, 1, 1, 1, 1 )
 
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
@@ -31,7 +31,7 @@ collision_mask = 17
 [node name="Type" parent="." index="2"]
 script = ExtResource( 2 )
 
-[node name="Body" type="Sprite" parent="Type" index="0"]
+[node name="Body" type="Sprite2D" parent="Type" index="0"]
 light_mask = 0
 material = SubResource( 2 )
 position = Vector2( -1.2207e-05, 0 )

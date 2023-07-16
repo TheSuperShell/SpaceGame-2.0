@@ -1,9 +1,9 @@
 extends Camera2D
 
-export(float) var MAX_ZOOM = 0.1
-export(float) var MIN_ZOOM = 4
+@export var MAX_ZOOM: float = 0.1
+@export var MIN_ZOOM: float = 4
 
-var zoom_amount = 1.0 setget _set_zoom_level
+var zoom_amount = 1.0: set = _set_zoom_level
 
 var previous_position = Vector2.ZERO
 
@@ -24,7 +24,7 @@ func _ready():
 	limit_bottom = bottomright.y
 	limit_right = bottomright.x
 	$ParallaxBackground/BlackBG.visible = true
-	$ParallaxBackground/Sprite.visible = true
+	$ParallaxBackground/Sprite2D.visible = true
 
 func _process(_delta):
 	match state:
@@ -53,9 +53,9 @@ func _set_zoom_level(value):
 func _input(event):
 	if event is InputEventMouseButton and state == IDLE:
 		if event.is_pressed():
-			if event.button_index == BUTTON_WHEEL_UP:
+			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 				_set_zoom_level(zoom_amount - 0.1)
-			if event.button_index == BUTTON_WHEEL_DOWN:
+			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 				_set_zoom_level(zoom_amount + 0.1)
 			emit_signal("zoom_changed", zoom_amount)
 	

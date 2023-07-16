@@ -1,9 +1,9 @@
-tool
-extends Particles2D
+@tool
+extends GPUParticles2D
 
-export(Vector2) var destination = Vector2.ZERO setget set_destination
+@export var destination: Vector2 = Vector2.ZERO: set = set_destination
 
 func set_destination(new_dest):
 	destination = new_dest
 	process_material.direction = Vector3(new_dest.x, new_dest.y, 0.0)
-	$Position2D.position = new_dest
+	$Marker2D.position = new_dest

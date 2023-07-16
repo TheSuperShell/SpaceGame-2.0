@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Better Celestial Bodies/Star/GasParticles.gd" type="Script" id=1]
-[ext_resource path="res://Better Celestial Bodies/body.png" type="Texture" id=2]
+[ext_resource path="res://Better Celestial Bodies/body.png" type="Texture2D" id=2]
 
-[sub_resource type="ParticlesMaterial" id=1]
+[sub_resource type="ParticleProcessMaterial" id=1]
 emission_shape = 1
 emission_sphere_radius = 10.0
 flag_disable_z = true
@@ -19,11 +19,11 @@ linear_accel_random = 0.19
 scale = 0.1
 color = Color( 0.839216, 0.839216, 0.541176, 1 )
 
-[node name="Particles2D" type="Particles2D"]
+[node name="GPUParticles2D" type="GPUParticles2D"]
 process_material = SubResource( 1 )
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
 destination = Vector2( -50, 50 )
 
-[node name="Position2D" type="Position2D" parent="."]
+[node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2( -50, 50 )

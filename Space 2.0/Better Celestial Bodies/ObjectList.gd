@@ -26,7 +26,7 @@ var action = IDLE
 
 func _ready():
 	for planet in get_children():
-		planet.connect("planet_pressed", self, "_on_planet_pressed")
+		planet.connect("planet_pressed", Callable(self, "_on_planet_pressed"))
 	image.create(128, 2, false, Image.FORMAT_RGBAH)
 	randomize()
 
@@ -35,7 +35,7 @@ func get_time_delta():
 	
 func _physics_process(_delta):
 	var number: int = 0
-	image.lock()
+	false # image.lock() # TODOConverter40, Image no longer requires locking, `false` helps to not break one line if/else, so it can freely be removed
 	for child in get_children():
 		if "Star" in child.name:
 			image.set_pixel(number, 0, Color(child.global_position.x, child.global_position.y, 0, 0))
@@ -43,7 +43,7 @@ func _physics_process(_delta):
 			number += 1
 			if number > 128:
 				break
-	image.unlock()
+	false # image.unlock() # TODOConverter40, Image no longer requires locking, `false` helps to not break one line if/else, so it can freely be removed
 	texture.create_from_image(image)
 	for child in get_children():
 		if "Planet" in child.name or "Gas" in child.name:
@@ -56,24 +56,24 @@ func _input(event):
 		else:
 			var new_body
 			if new_body_mass < Usefull.gas_mass_limit:
-				new_body = planet.instance()
-				new_body.angular_velocity = rand_range(-300, 300) / 100
+				new_body = planet.instantiate()
+				new_body.angular_velocity = randf_range(-300, 300) / 100
 				new_body.planet = "Random"
 			elif new_body_mass < Usefull.star_mass_limit:
-				new_body = gas_giant.instance()
-				new_body.angular_velocity = rand_range(-300, 300) / 100
+				new_body = gas_giant.instantiate()
+				new_body.angular_velocity = randf_range(-300, 300) / 100
 				new_body.planet = "Random"
 			elif new_body_mass < Usefull.bh_star_limit:
-				new_body = star.instance()
+				new_body = star.instantiate()
 			else:
-				new_body = bh.instance()
+				new_body = bh.instantiate()
 			new_body.state = 1 if time_stop else 0
 			new_body.has_tail = tails
-			new_body.mass = new_body_mass + rand_range(-10, 10)
+			new_body.mass = new_body_mass + randf_range(-10, 10)
 			new_body.radius = new_body_radius
 			new_body.global_position = get_local_mouse_position()
 			add_child(new_body)
-			new_body.connect("planet_pressed", self, "_on_planet_pressed")
+			new_body.connect("planet_pressed", Callable(self, "_on_planet_pressed"))
 	if event.is_action_pressed("trail"):
 		tails = not tails
 		for obj in get_children():
@@ -83,19 +83,19 @@ func _input(event):
 
 func create_random_body():
 	body.shuffle()
-	var new_body = body[0].instance()
-	new_body.mass = rand_range(100, Usefull.gas_mass_limit*0.8) * float("Planet" in new_body.name) +\
-	rand_range(Usefull.star_mass_limit, Usefull.bh_star_limit*0.8) * float("Star" in new_body.name) + \
-	rand_range(Usefull.gas_mass_limit, Usefull.star_mass_limit * 0.8) * float("Gas" in new_body.name)
-	new_body.radius = rand_range(4, 50) + rand_range(0, 100) * float("Star" in new_body.name)
+	var new_body = body[0].instantiate()
+	new_body.mass = randf_range(100, Usefull.gas_mass_limit*0.8) * float("Planet" in new_body.name) +\
+	randf_range(Usefull.star_mass_limit, Usefull.bh_star_limit*0.8) * float("Star" in new_body.name) + \
+	randf_range(Usefull.gas_mass_limit, Usefull.star_mass_limit * 0.8) * float("Gas" in new_body.name)
+	new_body.radius = randf_range(4, 50) + randf_range(0, 100) * float("Star" in new_body.name)
 	new_body.state = 1 if time_stop else 0
 	new_body.has_tail = tails
-	new_body.angular_velocity = rand_range(-300, 300) / 100
+	new_body.angular_velocity = randf_range(-300, 300) / 100
 	new_body.planet = "Random"
 	new_body.global_position = get_local_mouse_position()
-	new_body.velocity = Vector2(rand_range(-100, 100), rand_range(-100, 100))
+	new_body.velocity = Vector2(randf_range(-100, 100), randf_range(-100, 100))
 	add_child(new_body)
-	new_body.connect("planet_pressed", self, "_on_planet_pressed")
+	new_body.connect("planet_pressed", Callable(self, "_on_planet_pressed"))
 
 func _on_planet_pressed(planet):
 	if action == DELETE:
