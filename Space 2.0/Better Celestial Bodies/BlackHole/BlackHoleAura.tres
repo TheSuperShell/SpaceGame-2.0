@@ -1,9 +1,10 @@
-[gd_resource type="Shader" format=2]
+[gd_resource type="Shader" format=3 uid="uid://j6hvwo8v2tdi"]
 
 [resource]
 code = "shader_type canvas_item;
 
 uniform sampler2D curve;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture;
 uniform float force = 1.0;
 
 void fragment() {

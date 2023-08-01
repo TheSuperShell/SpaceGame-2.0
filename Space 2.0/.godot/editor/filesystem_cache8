@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1689490950
+::res://::1689497915
 ambient.mp3::AudioStreamMP3::971031378868939263::1689490815::1689490951::1::::<><>::
-default_env.tres::Environment::-1::1689490943::0::1::::<><>::
+default_env.tres::Environment::8949655063658426270::1689627852::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1689490815::0::1::::<><>::
 icon.png::CompressedTexture2D::2669356401444032205::1689490815::1689490951::1::::<><>::
 ::res://Assets/::1689490815
@@ -10,11 +10,11 @@ LightingShader.gdshader::Shader::-1::1689490943::0::1::::<><>::
 StarColorGradient.tres::Gradient::-1::1689490943::0::1::::<><>::
 ::res://Assets/Prehabs/::1689490815
 ::res://Assets/Prehabs/Celestial Objects/::1689490815
-CelestialBody.tscn::PackedScene::-1::1689490943::0::1::::<><>::res://Assets/Scripts/Physics/CelestialBody.gd<>res://Better Celestial Bodies/body.png<>res://Assets/Scripts/Physics/CelestialBodyHitbox.gd
-Planet.tscn::PackedScene::-1::1689490943::0::1::::<><>::res://Assets/Prehabs/Celestial Objects/CelestialBody.tscn<>res://Assets/Scripts/Celestial Objects/Planet.gd<>res://Assets/Textures/Celestial Objects/Planets/earth_PNG8.png<>res://Assets/Materials/LightingShader.gdshader
+CelestialBody.tscn::PackedScene::2092635381942738782::1689627852::0::1::::<><>::res://Assets/Scripts/Physics/CelestialBody.gd<>uid://c5vv22egm1bxy::::res://Better Celestial Bodies/body.png<>res://Assets/Scripts/Physics/CelestialBodyHitbox.gd
+Planet.tscn::PackedScene::2821499406948788125::1689627852::0::1::::<><>::uid://42xntinyy0p3::::res://Assets/Prehabs/Celestial Objects/CelestialBody.tscn<>res://Assets/Scripts/Celestial Objects/Planet.gd<>uid://b4vt5ik2cy673::::res://Assets/Textures/Celestial Objects/Planets/earth_PNG8.png<>res://Assets/Materials/LightingShader.gdshader
 Star.tscn::PackedScene::-1::1689490943::0::1::::<><>::res://Assets/Prehabs/Celestial Objects/CelestialBody.tscn<>res://Assets/Scripts/Celestial Objects/Star.gd<>res://Better Celestial Bodies/Star/light.png
-::res://Assets/Scenes/::1689490815
-NewPhysicsTest.tscn::PackedScene::-1::1689490943::0::1::::<><>::res://Assets/Scripts/Physics/Simulation.gd<>res://Assets/Prehabs/Celestial Objects/Star.tscn<>res://Assets/Scripts/Physics/TrajectorySimulation.gd<>res://Assets/Prehabs/Celestial Objects/Planet.tscn<>res://Assets/Scripts/Physics/LightUpdater.gd<>res://Assets/Textures/BG/space_bg_5.jpg<>res://Assets/Scripts/MapUtils/Spawner.gd
+::res://Assets/Scenes/::1689491057
+NewPhysicsTest.tscn::PackedScene::2593928256671153276::1689627852::0::1::::<><>::res://Assets/Scripts/Physics/Simulation.gd<>res://Assets/Prehabs/Celestial Objects/Star.tscn<>res://Assets/Scripts/Physics/TrajectorySimulation.gd<>uid://bgg0xhs42niyv::::res://Assets/Prehabs/Celestial Objects/Planet.tscn<>res://Assets/Scripts/Physics/LightUpdater.gd<>uid://cju6jpqndbtrg::::res://Assets/Textures/BG/space_bg_5.jpg<>res://Assets/Scripts/MapUtils/Spawner.gd
 ::res://Assets/Scripts/::1689490815
 ::res://Assets/Scripts/Celestial Objects/::1689490815
 Planet.gd::GDScript::-1::1689490943::0::1::::<>CelestialBody<>::
@@ -25,14 +25,14 @@ Spawner.gd::GDScript::-1::1689490943::0::1::::<>Node<>::
 CelestialBody.gd::GDScript::-1::1689490943::0::1::::CelestialBody<>PhysicalBody<>::
 CelestialBodyHitbox.gd::GDScript::-1::1689490943::0::1::::<>Area2D<>::
 Constants.gd::GDScript::-1::1689490943::0::1::::<>Node<>::
-LightUpdater.gd::GDScript::-1::1689490943::0::1::::<>Node<>::
+LightUpdater.gd::GDScript::-1::1689626775::0::1::::<>Node<>::
 PhysicalBody.gd::GDScript::-1::1689490943::0::1::::PhysicalBody<>Node2D<>::
 Simulation.gd::GDScript::-1::1689490943::0::1::::<>Node<>::
 TrajectorySimulation.gd::GDScript::-1::1689490943::0::1::::<>Node<>::
 ::res://Assets/Scripts/Utils/::1689490815
 usefull.gd::GDScript::-1::1689490943::0::1::::<>Node<>::
 ::res://Assets/Textures/::1689490815
-::res://Assets/Textures/BG/::1689490815
+::res://Assets/Textures/BG/::1689490952
 original.jpg::CompressedTexture2D::7398509269103478594::1689490815::1689490952::1::::<><>::
 space_back_ground.jpg::CompressedTexture2D::1684899587879514315::1689490815::1689490952::1::::<><>::
 space_bg_2.jpg::CompressedTexture2D::906314717086653058::1689490815::1689490952::1::::<><>::
@@ -41,38 +41,38 @@ space_bg_4.jpg::CompressedTexture2D::8566723574192129866::1689490815::1689490952
 space_bg_5.jpg::CompressedTexture2D::5447727627292447724::1689490815::1689490952::1::::<><>::
 space_bg_6.jpg::CompressedTexture2D::8258008435878677384::1689490815::1689490952::1::::<><>::
 ::res://Assets/Textures/Celestial Objects/::1689490815
-::res://Assets/Textures/Celestial Objects/Planets/::1689490815
+::res://Assets/Textures/Celestial Objects/Planets/::1689490956
 earth_PNG8.png::CompressedTexture2D::4466456715576259864::1689490815::1689490953::1::::<><>::
 Mercurt.png::CompressedTexture2D::8832933480730998215::1689490815::1689490952::1::::<><>::
 pngwing.com.png::CompressedTexture2D::8044362149103367226::1689490815::1689490952::1::::<><>::
 Venus.png::CompressedTexture2D::6325792797186171651::1689490815::1689490956::1::::<><>::
-::res://Better Celestial Bodies/::1689490815
-body.png::CompressedTexture2D::6923183307245300858::1689490815::1689490951::1::::<><>::
-CelestialBody.gd::GDScript::-1::1689490943::0::1::::<>Node2D<>::
-CelestialBody.tscn::PackedScene::-1::1689490943::0::1::::<><>::res://Better Celestial Bodies/CelestialBody.gd<>res://Better Celestial Bodies/CollisionArea.tscn<>res://Better Celestial Bodies/body.png
+::res://Better Celestial Bodies/::1689490951
+body.png::CompressedTexture2D::6923183307245300858::1689490815::1689512899::1::::<><>::
+CelestialBody.gd::GDScript::-1::1689617036::0::1::::<>Node2D<>::
+CelestialBody.tscn::PackedScene::8208868430541489826::1689627852::0::1::::<><>::res://Better Celestial Bodies/CelestialBody.gd<>res://Better Celestial Bodies/CollisionArea.tscn<>uid://c5vv22egm1bxy::::res://Better Celestial Bodies/body.png
 CollisionArea.gd::GDScript::-1::1689490943::0::1::::<>Area2D<>::
 CollisionArea.tscn::PackedScene::-1::1689490943::0::1::::<><>::res://Better Celestial Bodies/CollisionArea.gd
 ObjectList.gd::GDScript::-1::1689490943::0::1::::<>Node2D<>::
 SuckArea.tscn::PackedScene::-1::1689490943::0::1::::<><>::res://Better Celestial Bodies/Star/SuckArea.gd
 ::res://Better Celestial Bodies/BlackHole/::1689490815
-BlackHole.tscn::PackedScene::-1::1689490943::0::1::::<><>::res://Better Celestial Bodies/CelestialBody.tscn<>res://Better Celestial Bodies/BlackHole/BlackHoleType.gd<>res://Better Celestial Bodies/BlackHole/Body.gd<>res://icon.png<>res://Better Celestial Bodies/BlackHole/BlackHoleCurve.tres<>res://Better Celestial Bodies/BlackHole/BlackHoleAura.tres<>res://Better Celestial Bodies/SuckArea.tscn
-BlackHoleAura.tres::Shader::-1::1689490943::0::1::::<><>::
-BlackHoleCurve.tres::CurveTexture::-1::1689490943::0::1::::<><>::
+BlackHole.tscn::PackedScene::2760256955703776050::1689627852::0::1::::<><>::res://Better Celestial Bodies/CelestialBody.tscn<>res://Better Celestial Bodies/BlackHole/BlackHoleType.gd<>res://Better Celestial Bodies/BlackHole/Body.gd<>uid://c5vv22egm1bxy::::res://Better Celestial Bodies/body.png<>uid://b87dnnl3olhws::::res://Better Celestial Bodies/BlackHole/BlackHoleAura.tres<>res://Better Celestial Bodies/SuckArea.tscn
+BlackHoleAura.tres::Shader::6563345741226564724::1689629520::0::1::::<><>::
+BlackHoleCurve.tres::CurveTexture::3189865614981072073::1689617036::0::1::::<><>::
 BlackHoleType.gd::GDScript::-1::1689490943::0::1::::<>Node2D<>::
 Body.gd::GDScript::-1::1689490943::0::1::::<>Sprite2D<>::
 ::res://Better Celestial Bodies/GasGiant/::1689490815
 GasGiant.tscn::PackedScene::-1::1689490943::0::1::::<><>::res://Better Celestial Bodies/CelestialBody.tscn<>res://Better Celestial Bodies/GasGiant/GasGiantType.gd<>res://Assets/Materials/LightingShader.gdshader<>res://Better Celestial Bodies/GasGiant/GasGiants/Jupiter.png
 GasGiantType.gd::GDScript::-1::1689490943::0::1::::<>Node2D<>::
-::res://Better Celestial Bodies/GasGiant/GasGiants/::1689490815
+::res://Better Celestial Bodies/GasGiant/GasGiants/::1689490953
 3D_Uranus.png::CompressedTexture2D::6601017115634242433::1689490815::1689490952::1::::<><>::
 Jupiter.png::CompressedTexture2D::3394299376334136965::1689490815::1689490953::1::::<><>::
 kisspng-neptune-outer-planets-uranus-solar-system-planeta-5b0e6046477516.3797402815276688062927.png::CompressedTexture2D::6459365014209433639::1689490815::1689490952::1::::<><>::
 Saturn.png::CompressedTexture2D::2573207251489944936::1689490815::1689490952::1::::<><>::
 ::res://Better Celestial Bodies/Planet/::1689490815
-LightingShader.gdshader::Shader::-1::1689490943::0::1::::<><>::
+LightingShader.gdshader::Shader::-1::1689629520::0::1::::<><>::
 Planet.tscn::PackedScene::-1::1689490943::0::1::::<><>::res://Better Celestial Bodies/CelestialBody.tscn<>res://Better Celestial Bodies/Planet/PlanetType.gd<>res://Assets/Materials/LightingShader.gdshader<>res://Assets/Textures/Celestial Objects/Planets/earth_PNG8.png
 PlanetType.gd::GDScript::-1::1689490943::0::1::::<>Node2D<>::
-::res://Better Celestial Bodies/Star/::1689490815
+::res://Better Celestial Bodies/Star/::1689490951
 GasParticles.gd::GDScript::-1::1689490943::0::1::::<>GPUParticles2D<>::
 GasParticles.tscn::PackedScene::-1::1689490943::0::1::::<><>::res://Better Celestial Bodies/Star/GasParticles.gd<>res://Better Celestial Bodies/body.png
 light.png::CompressedTexture2D::5210522076044245145::1689490815::1689490951::1::::<><>::
@@ -85,7 +85,7 @@ BlackBackGround.gd::GDScript::-1::1689490943::0::1::::<>Node2D<>::
 Camera.gd::GDScript::-1::1689490943::0::1::::<>Camera2D<>::
 Camera.tscn::PackedScene::-1::1689490943::0::1::::<><>::res://Camera3D/Camera.gd<>res://Camera3D/ParallaxBackground.tscn<>res://Assets/Textures/BG/space_bg_6.jpg
 ParallaxBackground.tscn::PackedScene::-1::1689490943::0::1::::<><>::res://Camera3D/BackGround.gd<>res://Assets/Textures/BG/space_back_ground.jpg
-::res://GUI/::1689490815
+::res://GUI/::1689490951
 nasalization-rg.otf::FontFile::5066459430307781968::1689490815::1689490951::1::::<><>::
 nasa_font_12.tres::FontFile::-1::1689490943::0::1::::<><>::res://GUI/nasalization-rg.otf
 nasa_font_30.tres::FontFile::-1::1689490943::0::1::::<><>::res://GUI/nasalization-rg.otf

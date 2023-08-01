@@ -4,7 +4,7 @@ var image: Image = Image.new()
 var texture: ImageTexture = ImageTexture.new()
 
 func _ready():
-	image.create(128, 2, false, Image.FORMAT_RGBAH)
+	image = Image.create(128, 2, false, Image.FORMAT_RGBAH)
 
 func _process(delta):
 	var number: int = 0

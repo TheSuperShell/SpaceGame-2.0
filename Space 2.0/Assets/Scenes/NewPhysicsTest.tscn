@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Physics/Simulation.gd" id="1"]
 [ext_resource type="PackedScene" path="res://Assets/Prehabs/Celestial Objects/Star.tscn" id="2"]
 [ext_resource type="Script" path="res://Assets/Scripts/Physics/TrajectorySimulation.gd" id="3"]
-[ext_resource type="PackedScene" path="res://Assets/Prehabs/Celestial Objects/Planet.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://bgg0xhs42niyv" path="res://Assets/Prehabs/Celestial Objects/Planet.tscn" id="4"]
 [ext_resource type="Script" path="res://Assets/Scripts/Physics/LightUpdater.gd" id="5"]
 [ext_resource type="Texture2D" uid="uid://cju6jpqndbtrg" path="res://Assets/Textures/BG/space_bg_5.jpg" id="6"]
 [ext_resource type="Script" path="res://Assets/Scripts/MapUtils/Spawner.gd" id="7"]
@@ -19,7 +19,8 @@ texture = ExtResource("6")
 
 [node name="Trajectories" type="Node" parent="."]
 script = ExtResource("3")
-numSteps = 1751
+timeStep = 0.01
+numSteps = 362
 
 [node name="Simulation" type="Node" parent="."]
 script = ExtResource("1")
@@ -58,7 +59,7 @@ mass = 3e+09
 [node name="Star2" parent="." instance=ExtResource("2")]
 modulate = Color(0.829674, 0.803217, 0.428999, 1)
 position = Vector2(920, 216)
-luminocity = 1.0
+luminocity = 2.07921
 radius = 80.0
 angularVelocity = 0.785398
 mass = 2e+09

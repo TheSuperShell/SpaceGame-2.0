@@ -1,10 +1,11 @@
-[gd_resource type="CurveTexture" load_steps=2 format=2]
+[gd_resource type="CurveTexture" load_steps=2 format=3 uid="uid://blpgvdpm7akof"]
 
-[sub_resource type="Curve" id=1]
+[sub_resource type="Curve" id="1"]
 resource_local_to_scene = true
 min_value = -1.0
-_data = [ Vector2( 0, 0.0363637 ), 0.0, 0.0, 0, 0, Vector2( 0.119565, -0.309091 ), 0.0, 0.0, 0, 0, Vector2( 0.211957, 0.363636 ), 1.8161, 1.8161, 0, 0, Vector2( 0.315217, 0.145455 ), -3.23394, -3.23394, 0, 0, Vector2( 0.434783, 0 ), -0.663323, 0.0, 0, 0 ]
+_data = [Vector2(0, 0.0363637), 0.0, 0.0, 0, 0, Vector2(0.119565, -0.309091), 0.0, 0.0, 0, 0, Vector2(0.211957, 0.363636), 1.8161, 1.8161, 0, 0, Vector2(0.315217, 0.145455), -3.23394, -3.23394, 0, 0, Vector2(0.434783, 0), -0.663323, 0.0, 0, 0]
+point_count = 5
 
 [resource]
 resource_local_to_scene = true
-curve = SubResource( 1 )
+curve = SubResource("1")

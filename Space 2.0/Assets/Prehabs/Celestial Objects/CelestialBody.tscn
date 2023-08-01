@@ -1,28 +1,25 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://42xntinyy0p3"]
 
-[ext_resource path="res://Assets/Scripts/Physics/CelestialBody.gd" type="Script" id=1]
-[ext_resource path="res://Better Celestial Bodies/body.png" type="Texture2D" id=2]
-[ext_resource path="res://Assets/Scripts/Physics/CelestialBodyHitbox.gd" type="Script" id=3]
+[ext_resource type="Script" path="res://Assets/Scripts/Physics/CelestialBody.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c5vv22egm1bxy" path="res://Better Celestial Bodies/body.png" id="2"]
+[ext_resource type="Script" path="res://Assets/Scripts/Physics/CelestialBodyHitbox.gd" id="3"]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id="1"]
 radius = 1.0
 
 [node name="CelestialBody" type="Node2D" groups=["PhysicalBody"]]
-script = ExtResource( 1 )
-color = Color( 1, 1, 1, 1 )
+script = ExtResource("1")
 
 [node name="Trajectory" type="Line2D" parent="."]
 width = 5.0
-default_color = Color( 1, 1, 1, 1 )
 
 [node name="CelestialBodySprite" type="Sprite2D" parent="."]
-scale = Vector2( 0.3125, 0.3125 )
-texture = ExtResource( 2 )
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("2")
 
 [node name="CelestialBodyHitbox" type="Area2D" parent="."]
-visible = false
-scale = Vector2( 10, 10 )
-script = ExtResource( 3 )
+scale = Vector2(10, 10)
+script = ExtResource("3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CelestialBodyHitbox"]
-shape = SubResource( 1 )
+shape = SubResource("1")
